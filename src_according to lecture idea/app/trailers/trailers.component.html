@@ -1,0 +1,25 @@
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+      <app-trailer-list-edit></app-trailer-list-edit>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-9">
+    <app-trailer-list (trailerWasSelected)="selectedTrailer=$event">
+    </app-trailer-list> 
+    <!-- <child-selector (notify)='onNotify($event')></child-selector> -->
+    <!-- <app-trailer-list (notify)="onNotify($event)" (trailerWasSelected)="selectedTrailer=$event"></app-trailer-list> -->
+    <!-- <app-trailer-list></app-trailer-list> -->
+    
+  </div>
+  <div class="col-sm-3">
+        <app-trailer-detail *ngIf="selectedTrailer" [trailer]="selectedTrailer"></app-trailer-detail>
+    <ng-template #infoText>
+      <p>Please Select a Trailer!</p>
+    </ng-template>
+  </div>
+
+  <!-- <input type="image" img [src]="imagPath" id="imagePath" class="image-responsive" style="max-height: 100px"> -->
+
+</div>

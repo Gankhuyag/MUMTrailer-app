@@ -1,0 +1,133 @@
+<!-- <div class="row">
+  <div class="col-xs-12">
+      <button class="btn btn-success">
+          New Trailer
+      </button>
+  </div>
+</div> 
+ -->
+ <!-- public trailerType: string;
+ public number: string;
+ public location: string;
+ public imagePath: string;
+ public amount:string;
+ public feature:string; -->
+
+<div class="row">
+  <div class="col-xs-12">
+    <form (ngSubmit)=onAddTrailer(f) #f="ngForm">
+      <div class="row">
+        <div class="col-sm-5 form-group">
+          <label for="name">Trailer Number</label>
+          <input type="text" id="name" name="number" class="form-control" ngModel #nameInput>
+          <mat-form-field>
+            <mat-label>Trailer Type</mat-label>
+            <mat-select name="typeid" ngModel>
+              <mat-option *ngFor="let trails of trailerTypes" [value]="trails.value">
+                {{trails.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!-- LOCATION -->
+          <mat-form-field>
+            <mat-label>Trailer Location / Address</mat-label>
+            <mat-select name="location" ngModel>
+              <mat-option *ngFor="let locat of trailerLocations" [value]="locat.value">
+                {{locat.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <label for="name">Trailer Rent Amount</label>
+          <input type="number" id="amount" name="amount" ngModel required pattern="^[1-9]+[0-9]*$"
+           class="form-control" #nameInput>
+
+          <mat-form-field class="example-full-width">
+            <textarea matInput name="feature" ngModel placeholder="Leave a comment"></textarea>
+          </mat-form-field>
+
+          <!-- <select [(ngModel)]='roomSelect' name="roomOption" class='form-control'>
+            <option value='One'>One Badroom</option>
+            <option value='Two'>Two Badroom</option>
+            <option value='Three'>Three Badroom</option>
+          </select> -->
+
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-sm-5 form-group">
+          <label for="location">Location</label>
+          <select [(ngModel)]='locSelect' name="location" class='form-control'>
+            <option value='loc1'>Utopia</option>
+            <option value='loc2'>Street 4</option>
+            <option value='loc3'>Street 5</option>
+          </select>
+        </div>
+      </div> -->
+
+      <mat-card>
+        <form [formGroup]="uploadForm" (ngSubmit)="uploadSubmit(g)" #g="ngForm">
+          <mat-card-content>
+             <mat-form-field class="form-field">
+              <mat-label>Trailer Status</mat-label>
+              <mat-select name="status" ngModel formControlName="type" required>
+                <mat-option value="Rent">Availabe</mat-option>
+                <mat-option value="NoRent">Maintenance</mat-option>        
+              </mat-select>
+            </mat-form-field>
+            <br> 
+          
+            <br>
+            <!-- <h2>Upload Trailer Image</h2>
+            <br> -->
+            <input formControlName="document" type="file" ng2FileSelect accept=".png" [uploader]="uploader"
+              multiple /><br />
+            <br>
+            <div class="drop-zone">
+              <div ng2FileDrop [uploader]="uploader" class="drop-zone">
+                Drag and drop files to upload
+              </div>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th width="90%">
+                    File Name
+                  </th>
+                  <th width="10%">
+                    Remove
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of uploader.queue">
+                  <th width="90%">
+                    {{ item.file.name}}({{item.file.size/1000000}} MB)
+                  </th>
+                  <th class="text-center" width="10%">
+                    <mat-icon (click)="item.remove()">delete</mat-icon>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <button mat-raised-button color="accent" [disabled]="!uploadForm.valid" type="submit">Upload Data</button>
+          </mat-card-content>
+        </form>
+      </mat-card>
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-success" [disabled]="!f.valid" type="submit"> Add</button>
+          <button class="btn btn-danger" type="submit"> Delete</button>
+          <button class="btn btn-primary" type="submit"> Clear</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<!-- <form [formGroup]="countryForm">
+  <select formControlName="countryControl">
+    <option [value]="country" *ngFor="let country of countries">{{country}}</option>
+  </select>
+ </form> -->

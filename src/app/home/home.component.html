@@ -1,0 +1,92 @@
+﻿    <div class="container-fluid">
+            <div *ngFor="let d of trailers; let i = index" >
+              <div class="row" *ngIf="i % 4 === 0">
+                <div class="col-sm-3 well">
+                        <div class="panel-heading">Available Trailers <span class="badge" text="Trailer"></span></div>
+                        <div class="panel-body"><img [src]="trailers[i].imagePath" class="img-responsive"
+                                style="width:100%; height: 100%" alt="{{trailers[i].number}}"></div>
+                        <div class="panel-footer"><a href="trailers[i].number" class="btn btn-primary"
+                                style="margin-right: 2em;">{{trailers[i].number}}</a></div>
+                </div>
+                <div class="col-sm-3 well">
+                        <div class="panel-heading">Available Trailers <span class="badge" text="Trailer"></span></div>
+                        <div class="panel-body"><img [src]="trailers[i+1].imagePath" class="img-responsive"
+                                style="width:100%; height: 100%" alt="{{trailers[i+1].number}}"></div>
+                        <div class="panel-footer"><a href="trailer[i+1].number" class="btn btn-primary"
+                                style="margin-right: 2em;">{{trailers[i+1].number}}</a></div>
+                </div>
+                <div class="col-sm-3 well">
+                        <div class="panel-heading">Available Trailers <span class="badge" text="Trailer"></span></div>
+                        <div class="panel-body"><img [src]="trailers[i+2].imagePath" class="img-responsive"
+                                style="width:100%; height: 100%" alt="{{trailers[i+2].number}}"></div>
+                        <div class="panel-footer"><a href="trailer[i+2].number" class="btn btn-primary"
+                                style="margin-right: 2em;">{{trailers[i+2].number}}</a></div>
+                
+                </div>
+
+                <div class="col-sm-3 well">
+                    <div class="panel-heading">Available Trailers <span class="badge" text="Trailer"></span></div>
+                    <div class="panel-body"><img [src]="trailers[i+3].imagePath" class="img-responsive"
+                            style="width:100%; height: 100%" alt="{{trailers[i+3].number}}"></div>
+                    <div class="panel-footer"><a href="trailer[i+3].number" class="btn btn-primary"
+                            style="margin-right: 2em;">{{trailers[i+2].number}}</a></div>
+            
+            </div>
+
+              </div>
+            </div>
+          </div>
+
+
+    <!-- <h1>Hi {{currentUser.firstName}}!</h1>
+<p>You're logged in with Angular 7!!</p>
+<h3>All registered users:</h3>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+    </li>
+</ul> -->
+    <!-- <div class="container">
+    <*ngFor="let trailerEl of trailers; let i=index" (click)="onViewItem(i)" [trailer]='trailerEl'
+        >
+</div> -->
+    <!-- 
+<div class="columns">
+    <div ng-repeat="item in ['a','b','c','d','e','f','g']">
+        {{item}}
+    </div>
+</div> -->
+    <!-- <div class="container">
+    <div>
+        <div class="item  col-sm-3" *ngFor="let trailer of trailers; let i=index" (click)="onViewItem(i)">
+
+
+            <div class="thumbnail">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Available Trailers <span class="badge" text="Trailer"></span></div>
+                    <div class="panel-body"><img [src]="trailer.imagePath" class="img-responsive"
+                            style="width:100%; height: 100%" alt="{{trailer.number}}"></div>
+                    <div class="panel-footer"><a href="trailer.number" class="btn btn-primary"
+                            style="margin-right: 2em;">trailer.number</a></div>
+                </div>
+            </div>
+
+        </div> -->
+    <!-- <div class="col-sm-4">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Total Tenants <span class="badge" th:text="${dashboard.totalTenants}"></span></div>
+                <div class="panel-body"><img src="/pictures/customers.jpg" class="img-responsive" style="width:100%; height: 100%" alt="Image"></div>
+                <div class="panel-footer"><a href="/users/list" class="btn btn-primary" style="margin-right: 2em;">View Details</a></div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Under Repair Trailers <span class="badge" th:text="${dashboard.underTrailers}"></span></div>
+                <div class="panel-body"><img src="/pictures/repair.png" class="img-responsive" style="width:100%; height: 100%" alt="Image"></div>
+                <div class="panel-footer"><a href="trailers/search?trailernumber=&statusID=0" class="btn btn-primary" style="margin-right: 2em;">View Details</a></div>
+            </div>
+        </div> -->
+
+    <!-- </div>
+</div> -->

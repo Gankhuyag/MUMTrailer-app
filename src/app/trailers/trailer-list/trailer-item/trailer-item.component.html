@@ -1,0 +1,20 @@
+
+<a  class="list-group-item clearfix"
+  (click)="onSelected()">
+
+  <tr >
+    
+     <td width="350px"> 
+        <img [src]="trailer.imagePath" alt="{{trailer.number}}" class="img-responsive" style="max-height: 150px;">
+        
+      </td>   
+    <td width="250px">{{trailer.number}}</td>
+    <td width="250px">{{trailer.location}}</td>
+    <td width="140px">{{trailer.amount}}</td>
+    <td width="240px">{{trailer.feature}}</td>
+    <td width="240px">{{trailer.status}}</td>
+    <td width="240px">{{trailer.typeId}}</td>
+    <td align="right"><button (click)="Rent()">Rent</button>
+    
+  </tr>
+</a>
